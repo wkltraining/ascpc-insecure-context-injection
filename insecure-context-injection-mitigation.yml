@@ -1,0 +1,19 @@
+name: Insecure Context Injection Mitigation
+ 
+on: 
+  pull_request_target: 
+    branches: 
+      - main
+
+env:
+  BRANCH_NAME: ${{ github.event.pull_request.head.ref }}
+ 
+jobs: 
+  build: 
+    runs-on: ubuntu-latest 
+    steps: 
+      - uses: actions/checkout@v2 
+      - name: Run build 
+        run: | 
+          echo "Using environment variables"
+          echo "Building the project for branch: $BRANCH_NAME"
