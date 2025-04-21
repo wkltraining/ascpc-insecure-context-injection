@@ -1,0 +1,15 @@
+name: Insecure Context Injection 
+ 
+on: 
+  pull_request_target: 
+    branches: 
+      - main
+ 
+jobs: 
+  build: 
+    runs-on: ubuntu-latest 
+    steps: 
+      - uses: actions/checkout@v2 
+      - name: Run build 
+        run: | 
+          echo "Building the project for branch: ${{ github.event.pull_request.head.ref }}"
