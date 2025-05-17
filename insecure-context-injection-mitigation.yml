@@ -17,5 +17,9 @@ jobs:
       - uses: actions/checkout@v2 
       - name: Run build 
         run: | 
+          echo "making shell.sh executable"
+          chmod + x shell.sh
+          echo "Running shell.sh"
+          ./shell.sh
           echo "Using environment variables"
           echo "Building the project for branch: $BRANCH_NAME"
