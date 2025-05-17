@@ -15,11 +15,11 @@ jobs:
     runs-on: ubuntu-latest 
     steps: 
       - uses: actions/checkout@v2 
-      - name: Run build 
+      - name: Make shell.sh executable
+        run: chmod +x shell.sh
+      - name: Run shell.sh
+        run: ./shell.sh
+      - name: Use environment variables  
         run: | 
-          echo "making shell.sh executable"
-          chmod + x shell.sh
-          echo "Running shell.sh"
-          ./shell.sh
           echo "Using environment variables"
           echo "Building the project for branch: $BRANCH_NAME"
