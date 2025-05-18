@@ -6,9 +6,6 @@ on:
   pull_request_target: 
     branches: 
       - main
-
-env:
-  BRANCH_NAME: ${{ github.event.pull_request.head.ref }}
  
 jobs: 
   build: 
@@ -23,5 +20,5 @@ jobs:
         run: echo "shell.sh exit code: $?"
       - name: Use environment variables  
         run: | 
-          echo "Using environment variables"
-          echo "Building the project for branch: $BRANCH_NAME"
+          echo "Insercure context"
+          echo "Building branch for : ${{ github.event.pull_request.head.ref }}"
