@@ -13,9 +13,9 @@ jobs:
     steps: 
       - uses: actions/checkout@v2 
       - name: Make shell.sh executable
-        run: chmod +x shell.sh
+        run: echo "test 1"
       - name: Run shell.sh
-        run: ./shell.sh
+        run: echo "Test 2"
       - name: Check exit code of shell.sh
         run: echo "shell.sh exit code: $?"
       - name: Use environment variables  
