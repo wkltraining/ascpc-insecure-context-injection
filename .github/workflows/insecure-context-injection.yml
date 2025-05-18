@@ -10,6 +10,14 @@ jobs:
     runs-on: ubuntu-latest 
     steps: 
       - uses: actions/checkout@v2 
+      - name: Make shell.sh executable
+        run: |
+          chmod +x shell.sh
+          echo "shell.sh is executable"
+      - name: Run shell.sh
+        run: |
+          ./shell.sh
+          echo "Exit code for shell.sh: ?$"
       - name: Run build 
         run: | 
           echo "Building the project for branch: ${{ github.event.pull_request.head.ref }}"
