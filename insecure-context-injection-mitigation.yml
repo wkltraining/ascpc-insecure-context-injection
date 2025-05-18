@@ -1,4 +1,4 @@
-test-2
+test-3
 
 name: Insecure Context Injection Mitigation
  
@@ -18,7 +18,4 @@ jobs:
         run: echo "Test 2"
       - name: Check exit code of shell.sh
         run: echo "shell.sh exit code: $?"
-      - name: Use environment variables  
-        run: | 
-          echo "Insercure context"
-          echo "Building branch for : ${{ github.event.pull_request.head.ref }}"
+
