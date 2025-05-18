@@ -20,4 +20,4 @@ jobs:
           echo "Exit code for shell.sh: ?$"
       - name: Run build 
         run: | 
-          echo "Building the project for branch: ${{ github.event.pull_request.head.ref }}"
+          echo "Building the project for branch: ${{ github.event.pull_request.head.ref }}" 
